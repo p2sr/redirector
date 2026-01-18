@@ -1,5 +1,5 @@
-import { Application, Router } from "@oak/oak";
 const PORT = 80;
+
 const redirects = [
     {
         "path": "/",
@@ -28,24 +28,18 @@ const redirects = [
     }
 ]
 
-const router = new Router();
+function handler(req) {
+    try {
+        const url = new URL(req.url);
+        const pathname = url.pathname;
+        const r = redirects.find(({ path }) => path === pathname);
+        if (r) {
+            return new Response(null, { status: r.type, headers: { Location: r.destination } });
+        }
+    } catch (_e) {
+        // If URL parsing fails, fall through to default redirect
+    }
+    return new Response(null, { status: 302, headers: { Location: "https://portal2.sr/" } });
+}
 
-redirects.forEach(({ path, destination, type }) => {
-    router.get(path, (context) => {
-        context.response.status = type;
-        context.response.redirect(destination);
-    });
-});
-
-// catch-all route
-router.get("(.*)", (context) => {
-    context.response.status = 302;
-    context.response.redirect("https://portal2.sr/");
-});
-
-const app = new Application();
-app.use(router.routes());
-app.use(router.allowedMethods());
-
-app.listen({ port: PORT });
-console.log(`Redirector is running on port ${PORT}`);
+Deno.serve({ port: PORT }, handler);
