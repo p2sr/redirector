@@ -47,7 +47,7 @@ function handler(req) {
     try {
         const url = new URL(req.url);
         const pathname = url.pathname;
-        const r = redirects.find(({ path }) => path === pathname);
+        const r = redirects.find(({ path }) => path === pathname.toLowerCase());
         if (r) {
             return new Response(null, { status: r.type, headers: { Location: r.destination } });
         }
