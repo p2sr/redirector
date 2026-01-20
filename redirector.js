@@ -37,6 +37,11 @@ const redirects = [
         "type": 301,
     },
     {
+        "path": "/golds",
+        "destination": "https://docs.google.com/spreadsheets/d/1vPjer8CKrV5Lh5_GKIZjKahODkrA8b2sMGSyR-LFMUY",
+        "type": 302,
+    },
+    {
         "path": "/appeal",
         "destination": "https://forms.gle/Mg7sfsK38YvQQSt58",
         "type": 302,
