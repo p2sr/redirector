@@ -22,6 +22,21 @@ const redirects = [
         "type": 302,
     },
     {
+        "path": "/discord",
+        "destination": "https://discord.com/invite/hRwE4Zr",
+        "type": 301,
+    },
+    {
+        "path": "/yt",
+        "destination": "https://youtube.com/channel/UCJisCoBmkhsSNRICJCLAY3w",
+        "type": 301,
+    },
+    {
+        "path": "/youtube",
+        "destination": "https://youtube.com/channel/UCJisCoBmkhsSNRICJCLAY3w",
+        "type": 301,
+    },
+    {
         "path": "/appeal",
         "destination": "https://forms.gle/Mg7sfsK38YvQQSt58",
         "type": 302,
