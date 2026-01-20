@@ -42,6 +42,11 @@ const redirects = [
         "type": 302,
     },
     {
+        "path": "/src",
+        "destination": "https://www.speedrun.com/portal_2",
+        "type": 301,
+    },
+    {
         "path": "/appeal",
         "destination": "https://forms.gle/Mg7sfsK38YvQQSt58",
         "type": 302,
