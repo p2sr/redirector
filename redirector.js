@@ -37,6 +37,31 @@ const redirects = [
         "type": 301,
     },
     {
+        "path": "/ttv",
+        "destination": "https://twitch.tv/portal2speedruns",
+        "type": 301,
+    },
+    {
+        "path": "/twitch",
+        "destination": "https://twitch.tv/portal2speedruns",
+        "type": 301,
+    },
+    {
+        "path": "/gh",
+        "destination": "https://github.com/p2sr",
+        "type": 301,
+    },
+    {
+        "path": "/github",
+        "destination": "https://github.com/p2sr",
+        "type": 301,
+    },
+    {
+        "path": "/donate",
+        "destination": "https://github.com/sponsors/p2sr",
+        "type": 302,
+    },
+    {
         "path": "/golds",
         "destination": "https://docs.google.com/spreadsheets/d/1vPjer8CKrV5Lh5_GKIZjKahODkrA8b2sMGSyR-LFMUY",
         "type": 302,
