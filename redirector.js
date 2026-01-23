@@ -81,7 +81,7 @@ const redirects = [
 function handler(req) {
     try {
         const url = new URL(req.url);
-        const pathname = url.pathname;
+        let pathname = url.pathname;
         if (pathname.startsWith("/")) {
             pathname = pathname.slice(1);
         }
