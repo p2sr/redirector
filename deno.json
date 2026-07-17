@@ -1,5 +1,6 @@
 {
   "tasks": {
+    "dev": "deno run --watch --allow-net redirector.js",
     "start": "deno run --allow-net redirector.js"
   }
 }
